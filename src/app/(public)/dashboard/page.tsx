@@ -1,3 +1,7 @@
+export const metadata = {
+  title: "Dashboard | Public root layout",
+};
+
 const BarChart = () => {
   return <h1>Bar chart</h1>;
 };

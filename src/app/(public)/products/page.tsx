@@ -5,6 +5,10 @@ type ProductType = {
   name: string;
 };
 
+export const metadata = {
+  title: "Products | Public root layout",
+};
+
 const ProductsPage = () => {
   const productsArray: ProductType[] = [
     {

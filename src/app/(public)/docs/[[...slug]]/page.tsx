@@ -1,3 +1,7 @@
+export const metadata = {
+  title: "Docs | Public root layout",
+};
+
 type DocsType = {
   params: Promise<{ slug: string[] }>;
 };

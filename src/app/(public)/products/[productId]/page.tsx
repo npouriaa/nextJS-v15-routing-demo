@@ -1,8 +1,21 @@
-type ProductDetailsType = {
+import { Metadata } from "next";
+
+type ProductDetailsPropsType = {
   params: Promise<{ productId: string }>;
 };
 
-const ProductDetails = async ({ params }: ProductDetailsType) => {
+// Dynamic generate meta data function (cant use it in client components directly)
+export const generateMetadata = async ({
+  params,
+}: ProductDetailsPropsType): Promise<Metadata> => {
+  const { productId } = await params;
+  return {
+    title : `Product ${productId} | Public root layout`
+  }
+};
+
+const ProductDetails = async ({ params }: ProductDetailsPropsType) => {
+  console.log("first")
   const productId = (await params).productId;
   return <h1>Details aobut product {productId}</h1>;
 };

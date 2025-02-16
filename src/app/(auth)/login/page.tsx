@@ -1,3 +1,7 @@
+export const metadata = {
+  title: "Login | Auth root layout",
+};
+
 const Login = () => {
   return <h1>Login</h1>;
 };
