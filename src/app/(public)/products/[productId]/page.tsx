@@ -10,7 +10,7 @@ export const generateMetadata = async ({
 }: ProductDetailsPropsType): Promise<Metadata> => {
   const { productId } = await params;
   return {
-    title : `Product ${productId} | Public root layout`
+    title : `Product ${productId}`
   }
 };
 

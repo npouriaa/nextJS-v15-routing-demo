@@ -1,5 +1,7 @@
 export const metadata = {
-  title: "About | Public root layout",
+  title: {
+    absolute : "About Us"
+  },
 };
 
 const About = () => {

@@ -3,9 +3,14 @@ import "../globals.css";
 // Components
 import Footer from "@/components/layouts/root/Footer";
 import Header from "@/components/layouts/root/Header";
+import { Metadata } from "next";
 
-export const metadata = {
-  title: "Public root layout",
+export const metadata : Metadata = {
+  title: {
+    default : "Public root layout",
+    template : "%s | Public root layout",
+    absolute : ""
+  },
 };
 
 export default function RootLayout({

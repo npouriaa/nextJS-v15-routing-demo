@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Docs | Public root layout",
+  title: "Docs",
 };
 
 type DocsType = {

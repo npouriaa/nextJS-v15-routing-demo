@@ -6,7 +6,7 @@ type ProductType = {
 };
 
 export const metadata = {
-  title: "Products | Public root layout",
+  title: "Products",
 };
 
 const ProductsPage = () => {

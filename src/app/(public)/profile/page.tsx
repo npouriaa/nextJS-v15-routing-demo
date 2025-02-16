@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Profile | Public root layout",
+  title: "Profile"
 };
 
 const Profile = () => {
