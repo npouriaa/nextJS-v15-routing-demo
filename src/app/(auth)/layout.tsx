@@ -1,10 +1,13 @@
+"use client";
+
 import "../globals.css";
 
-// Components
-import Footer from "@/components/layouts/root/Footer";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-export const metadata = {
-  title: "Auth root layout",
+type NavLinkType = {
+  name: string;
+  href: `/${string}`;
 };
 
 export default function AuthLayout({
@@ -12,12 +15,38 @@ export default function AuthLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const navLinks: NavLinkType[] = [
+    {
+      name: "Login",
+      href: "/login",
+    },
+    {
+      name: "Register",
+      href: "/register",
+    },
+    {
+      name: "Forgot password",
+      href: "/forgot-password",
+    },
+  ];
+
+  const pathname = usePathname();
+
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="p-6">
-        <main>{children}</main>
-        <Footer />
-      </body>
-    </html>
+    <div className="py-4 flex flex-col gap-10">
+      <ul className="flex gap-5">
+        {navLinks.map((item) => (
+          <li
+            key={item.name}
+            className={
+              pathname === item.href ? "text-red-500" : "text-blue-400"
+            }
+          >
+            <Link href={item.href}>{item.name}</Link>
+          </li>
+        ))}
+      </ul>
+      {children}
+    </div>
   );
 }
