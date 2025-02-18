@@ -4,6 +4,7 @@ import "../globals.css";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 type NavLinkType = {
   name: string;
@@ -15,6 +16,8 @@ export default function AuthLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const [input, setInput] = useState("");
+
   const navLinks: NavLinkType[] = [
     {
       name: "Login",
@@ -34,6 +37,14 @@ export default function AuthLayout({
 
   return (
     <div className="py-4 flex flex-col gap-10">
+      <div>
+        <input
+          className="text-black"
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+      </div>
       <ul className="flex gap-5">
         {navLinks.map((item) => (
           <li
