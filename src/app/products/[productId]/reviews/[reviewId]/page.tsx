@@ -4,17 +4,17 @@ type ReviewDetailsType = {
   params: Promise<{ productId: string; reviewId: string }>;
 };
 
-const getRandomInt = (count : number) => {
-  return Math.floor(Math.random() * count)
-}
+// const getRandomInt = (count : number) => {
+//   return Math.floor(Math.random() * count)
+// }
 
 const ReviewsDetails = async ({ params }: ReviewDetailsType) => {
   
-  const randomNumber = getRandomInt(2)
+  // const randomNumber = getRandomInt(2)
 
-  if(randomNumber === 1) {
-    throw new Error("Error loading review")
-  }
+  // if(randomNumber === 1) {
+  //   throw new Error("Error loading review")
+  // }
 
   const { productId, reviewId } = await params;
 
