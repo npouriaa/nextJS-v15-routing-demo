@@ -15,7 +15,6 @@ export const generateMetadata = async ({
 };
 
 const ProductDetails = async ({ params }: ProductDetailsPropsType) => {
-  console.log("first")
   const productId = (await params).productId;
   return <h1>Details aobut product {productId}</h1>;
 };
