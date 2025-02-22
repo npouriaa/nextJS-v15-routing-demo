@@ -5,6 +5,7 @@ type ComplexDashboardLayoutProps = {
   users: ReactNode;
   revenue: ReactNode;
   notifications: ReactNode;
+  login: ReactNode;
 };
 
 const ComplexDashboardLayout = ({
@@ -12,8 +13,11 @@ const ComplexDashboardLayout = ({
   users,
   revenue,
   notifications,
+  login,
 }: ComplexDashboardLayoutProps) => {
-  return (
+  const isLoggedIn = false;
+
+  return isLoggedIn ? (
     <div>
       <div>{children}</div>
       <div className="flex">
@@ -24,6 +28,8 @@ const ComplexDashboardLayout = ({
         <div className="flex flex-1">{notifications}</div>
       </div>
     </div>
+  ) : (
+    login
   );
 };
 
